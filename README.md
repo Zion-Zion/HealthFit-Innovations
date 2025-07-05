@@ -20,11 +20,16 @@ The goal is to create a normalized, scalable schema that ensures data integrity 
 
 ---
 
-## Entity-Relationship Diagram
+## Source Data
 
-The ERD below illustrates the database schema and relationships between the core tables:
+The database schema was designed using two initial datasets:
 
-![ERD Diagram](Images/ERD.png)
+- A **fitness tracker table** containing:  
+  `Brand Name, Device Type, Model Name, Color, Selling Price, Original Price, Display, Rating (Out of 5), Strap Material, Average Battery Life (in days), Reviews`
+
+- A **medical records table** containing:  
+  `patient_id, name, date_of_birth, gender, medical_conditions, medications, allergies, last_appointment_date, Tracker`
+
 
 ---
 
@@ -59,15 +64,11 @@ To ensure scalability, flexibility, and efficiency, I created a relational datab
 
 ---
 
-## Source Data
+## Entity-Relationship Diagram
 
-The database schema was designed using two initial datasets:
+The ERD below illustrates the database schema and relationships between the core tables:
 
-- A **fitness tracker table** containing:  
-  `Brand Name, Device Type, Model Name, Color, Selling Price, Original Price, Display, Rating (Out of 5), Strap Material, Average Battery Life (in days), Reviews`
-
-- A **medical records table** containing:  
-  `patient_id, name, date_of_birth, gender, medical_conditions, medications, allergies, last_appointment_date, Tracker`
+![ERD Diagram](Images/ERD.png)
 
 ---
 
@@ -97,7 +98,7 @@ Determines the most commonly used tracker brands among patients.
 ![Query 3](Images/Query%203.png)
 
 
-## 📂 Explore the SQL Files
+## 📂 The SQL Files
 
 For more insight into how the database was implemented and tested, check out the folders below:
 
