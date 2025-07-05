@@ -73,7 +73,7 @@ The database schema was designed using two initial datasets:
 
 ## 🧪 Sample Query Snapshots
 
-Here are a few representative queries built on the model:
+Here are a few representative I queries built on the model:
 
 **Query 1 – Count of Patients by Age Group**  
 
@@ -108,7 +108,7 @@ For more insight into how the database was implemented and tested, check out the
   - Creating and modeling normalized tables
 
 - 📁 [`Queries`](Queries)  
-  Contains 3 sample query files designed for analysis and reporting.  
-  ➕ *Index creation commands are commented out for testing purposes. Indexing was tested and found to significantly improve query runtime.*
+  Contains the 3 sample query files I designed for analysis and reporting.  
+  ➕ *Index creation commands are commented out for testing purposes. Indexing was tested and found to improve query runtime.*
 
 ---
