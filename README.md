@@ -76,18 +76,22 @@ The database schema was designed using two initial datasets:
 Here are a few representative queries built on the model:
 
 **Query 1 – Count of Patients by Age Group**  
+
 Categorizes patients into age groups to analyze demographic distribution.
 
 ![Query 1](Images/Query%201.png)
 
-**Query 2 – Patients Without a Fitness Tracker**
-Identifies patients who have not used or been associated with any tracker.
 
+
+**Query 2 – Patients Without a Fitness Tracker**
+
+Identifies patients who have not used or been associated with any tracker.
 
 ![Query 2](Images/Query%202.png)
 
 
 **Query 3 – Count of Patients Per Fitness Tracker Brand**
+
 Determines the most commonly used tracker brands among patients.
 
 ![Query 3](Images/Query%203.png)
