@@ -24,7 +24,7 @@ The goal is to create a normalized, scalable schema that ensures data integrity 
 
 The ERD below illustrates the database schema and relationships between the core tables:
 
-![ERD Diagram](assets/healthtrack_erd.png)
+![ERD Diagram](Images/ERD.png)
 
 ---
 
@@ -78,48 +78,32 @@ Here are a few representative queries built on the model:
 **Query 1 – Count of Patients by Age Group**  
 Categorizes patients into age groups to analyze demographic distribution.
 
-```sql
-SELECT
-  CASE
-    WHEN EXTRACT(YEAR FROM AGE(date_of_birth)) < 18 THEN 'Under 18'
-    WHEN EXTRACT(YEAR FROM AGE(date_of_birth)) BETWEEN 18 AND 35 THEN '18-35'
-    WHEN EXTRACT(YEAR FROM AGE(date_of_birth)) BETWEEN 36 AND 60 THEN '36-60'
-    ELSE '60+'
-  END AS age_group,
-  COUNT(*) AS total_patients
-FROM medical_records
-GROUP BY age_group;
-```
+![Query 1](Images/Query%201.png)
+
 **Query 2 – Patients Without a Fitness Tracker**
 Identifies patients who have not used or been associated with any tracker.
 
-```sql
-SELECT mr.patient_id, mr.name
-FROM medical_records mr
-LEFT JOIN medical_record_and_trackers mrt ON mr.patient_id = mrt.patient_id
-WHERE mrt.model_id IS NULL;
-```
+
+![Query 2](Images/Query%202.png)
+
 
 **Query 3 – Count of Patients Per Fitness Tracker Brand**
 Determines the most commonly used tracker brands among patients.
-```sql
-SELECT tm.brand_name, COUNT(DISTINCT mrt.patient_id) AS total_users
-FROM tracker_models tm
-JOIN medical_record_and_trackers mrt ON tm.model_id = mrt.model_id
-GROUP BY tm.brand_name
-ORDER BY total_users DESC;
-```
+
+![Query 3](Images/Query%203.png)
+
+
 ## 📂 Explore the SQL Files
 
 For more insight into how the database was implemented and tested, check out the folders below:
 
-- 📁 [`/sql_work/import_cleaning_modeling`](./sql_work/import_cleaning_modeling)  
+- 📁 [`Data import and modelling`](Data%20import%20and%20modelling)  
   Contains the SQL scripts used for:
   - Importing raw data  
   - Cleaning and transforming values  
   - Creating and modeling normalized tables
 
-- 📁 [`/sql_work/sample_queries`](./sql_work/sample_queries)  
+- 📁 [`Queries`](Queries)  
   Contains 3 sample query files designed for analysis and reporting.  
   ➕ *Index creation commands are commented out for testing purposes. Indexing was tested and found to significantly improve query runtime.*
 
